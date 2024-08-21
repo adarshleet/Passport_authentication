@@ -5,7 +5,7 @@ const userRouter = express.Router();
 
 
 
-userRouter.get('/auth/google',verifyEmailPassportController);
+// userRouter.get('/saveuser',verifyEmailPassportController);
 
 
 export default userRouter
