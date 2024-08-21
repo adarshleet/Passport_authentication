@@ -10,7 +10,7 @@ passport.use(new GoogleStrategy({
     clientID: '70056155461-hiq3rh4jsitss8j0qmvsih680t6sunhf.apps.googleusercontent.com',
     clientSecret:'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',
     callbackURL: 'http://localhost:3000/auth/google/callback',
-  }, async (token, tokenSecret, profile, done) => {
+  }, async (accessToken,token, tokenSecret, profile, done) => {
     try {
     //   let user = await User.findOne({ where: { googleId: profile.id } });
     //   if (!user) {
@@ -20,7 +20,7 @@ passport.use(new GoogleStrategy({
     //     });
     //   }
     console.log("proffff",profile)
-      return done(null, profile);
+      return done(null, {profile,accessToken});
     } catch (err) {
       return done(err);
     }
